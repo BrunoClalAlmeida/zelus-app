@@ -27,7 +27,7 @@ import androidx.compose.ui.unit.dp
 @Composable
 fun TelaEmConstrucao() {
     Surface(shape = RoundedCornerShape(topStart = 60.dp, topEnd = 60.dp), color = Color.White, modifier = Modifier.fillMaxSize().padding(top = 40.dp)) {
-        Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) { Text("Em ConstruÃ§Ã£o \uD83D\uDEA7", color = Color.Gray, textAlign = TextAlign.Center) }
+        Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) { Text("Em Construção \uD83D\uDEA7", color = Color.Gray, textAlign = TextAlign.Center) }
     }
 }
 

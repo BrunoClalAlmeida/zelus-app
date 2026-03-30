@@ -1,7 +1,7 @@
 ﻿// ============================================================
 // FormularioActivity.kt - Activity principal do app Zelus
-// Gerencia toda a navegacao entre telas e o fluxo de denuncia
-// Sensores utilizados: CAMERA e GPS (FusedLocationProvider)
+// Gerencia navegacao entre telas e o fluxo de denuncia
+// Sensores utilizados: usamos CAMERA e GPS (FusedLocationProvider)
 // Tecnologias: Jetpack Compose, Material Design 3
 // ============================================================
 package com.example.projectandroid.telas
