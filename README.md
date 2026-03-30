@@ -8,14 +8,6 @@
   <b>Aplicativo Android para denúncia de problemas urbanos com câmera e GPS</b>
 </p>
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Kotlin-100%25-7F52FF?logo=kotlin&logoColor=white" />
-  <img src="https://img.shields.io/badge/Jetpack%20Compose-UI-4285F4?logo=jetpackcompose&logoColor=white" />
-  <img src="https://img.shields.io/badge/Material%20Design%203-13C69D?logo=materialdesign&logoColor=white" />
-  <img src="https://img.shields.io/badge/Min%20SDK-24-green" />
-  <img src="https://img.shields.io/badge/Target%20SDK-35-blue" />
-</p>
-
 ---
 
 ## 👥 Equipe
