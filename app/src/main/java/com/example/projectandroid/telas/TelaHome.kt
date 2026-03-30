@@ -37,10 +37,10 @@ fun TelaHome(onNovaDenunciaClick: () -> Unit, onVerDenunciasClick: () -> Unit, o
         Column(modifier = Modifier.fillMaxWidth().padding(top = 48.dp), horizontalAlignment = Alignment.CenterHorizontally) {
             Column(modifier = Modifier.fillMaxWidth().padding(horizontal = 24.dp)) {
                 Surface(shape = RoundedCornerShape(50), color = Color.White.copy(alpha = 0.5f)) {
-                    Text("OlÃ¡, Bem Vindo", fontWeight = FontWeight.Bold, modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp))
+                    Text("Olá, bem vindo(a)!", fontWeight = FontWeight.Bold, modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp))
                 }
                 Spacer(modifier = Modifier.height(16.dp))
-                Text("Denuncie problemas da sua cidade\ne ajude a melhorar o bairro.", fontSize = 16.sp, fontFamily = FontFamily.Monospace, fontWeight = FontWeight.Bold)
+                Text("Denuncie problemas da sua cidade e ajude a melhorar o bairro.", fontSize = 16.sp, fontFamily = FontFamily.Monospace, fontWeight = FontWeight.Bold)
             }
             Spacer(modifier = Modifier.height(10.dp))
             Box(modifier = Modifier.fillMaxWidth().height(250.dp)) {
@@ -56,9 +56,9 @@ fun TelaHome(onNovaDenunciaClick: () -> Unit, onVerDenunciasClick: () -> Unit, o
                 verticalArrangement = Arrangement.spacedBy(24.dp),
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
-                BotaoZelus(texto = "Nova DenÃºncia", icone = Icons.Default.Notifications, onClick = onNovaDenunciaClick)
-                BotaoZelus(texto = "Ver DenÃºncias", icone = Icons.AutoMirrored.Filled.List, onClick = onVerDenunciasClick)
-                BotaoZelus(texto = "Sobre O Aplicativo", icone = Icons.Default.Info, onClick = onSobreClick)
+                BotaoZelus(texto = "Nova denúncia", icone = Icons.Default.Notifications, onClick = onNovaDenunciaClick)
+                BotaoZelus(texto = "Ver denúncia", icone = Icons.AutoMirrored.Filled.List, onClick = onVerDenunciasClick)
+                BotaoZelus(texto = "Sobre o aplicativo", icone = Icons.Default.Info, onClick = onSobreClick)
             }
         }
     }
@@ -86,20 +86,24 @@ fun TelaSobreApp(onVoltarClick: () -> Unit, paddingBarra: PaddingValues) {
 
         Surface(shape = RoundedCornerShape(24.dp), color = Color(0xFFD6F5DA), modifier = Modifier.fillMaxWidth()) {
             Column(modifier = Modifier.padding(24.dp), horizontalAlignment = Alignment.CenterHorizontally) {
-                Text(text = "O Zelus Ã© um aplicativo criado para ajudar cidadÃ£os a denunciar problemas urbanos de forma rÃ¡pida e simples.", fontSize = 15.sp, color = Color.DarkGray)
+                Text(text = "O Zelus é um aplicativo criado para ajudar cidadãos a denunciar problemas urbanos de forma rápida e simples.", fontSize = 15.sp, color = Color.DarkGray)
                 Spacer(modifier = Modifier.height(16.dp))
 
                 val topicos = listOf(
                     "Facilitar o registro de problemas urbanos na cidade",
-                    "Permitir que cidadÃ£os enviem denÃºncias com foto e localizaÃ§Ã£o",
-                    "Ajudar na identificaÃ§Ã£o rÃ¡pida de problemas nas ruas",
-                    "Melhorar a comunicaÃ§Ã£o entre moradores e Ã³rgÃ£os responsÃ¡veis",
+                    "Permitir que cidadãos enviem denúncias com foto e localização",
+                    "Ajudar na identifição rápida de problemas nas ruas",
+                    "Melhorar a comunicação entre moradores e órgãos responsáveis",
                     "Contribuir para uma cidade mais organizada e segura"
                 )
 
+                // Itera sobre a lista de tópicos para exibi-los um a um na tela
                 topicos.forEach { topico ->
+                    // Row organiza os elementos horizontalmente (marcador e depois o texto)
                     Row(modifier = Modifier.fillMaxWidth().padding(vertical = 8.dp)) {
-                        Text("â€¢ ", fontWeight = FontWeight.Bold, color = Color.DarkGray)
+                        // Exibe o caractere de marcador (bullet point) em negrito
+                        Text("• ", fontWeight = FontWeight.Bold, color = Color.DarkGray)
+                        // Exibe o conteúdo de texto do tópico em si
                         Text(topico, fontSize = 15.sp, color = Color.DarkGray)
                     }
                 }
