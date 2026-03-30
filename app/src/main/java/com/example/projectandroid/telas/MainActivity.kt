@@ -1,3 +1,9 @@
+﻿// ============================================================
+// MainActivity.kt - Tela de Splash (tela inicial) do app Zelus
+// Exibe o logo, nome do app e botao para acessar o sistema
+// Utiliza Jetpack Compose e Material Design 3
+// ============================================================
+
 package com.example.projectandroid.telas
 
 import android.content.Intent
@@ -25,13 +31,12 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.projectandroid.R
 
+// Activity inicial do app - exibe a tela de splash com logo e botao de acesso
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        // Comando que remove a barra roxa e faz a tela ocupar tudo
+        // Remove a barra de status e faz a tela ocupar toda a area
         enableEdgeToEdge()
-
         setContent {
             MaterialTheme {
                 Surface(modifier = Modifier.fillMaxSize()) {
@@ -51,72 +56,53 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+// Tela de splash com logo Zelus, titulo e botao de acesso
 @Composable
 fun ZelusSplashScreen(onAcessarClick: () -> Unit) {
     Column(
         modifier = Modifier
             .fillMaxSize()
             .background(Color(0xFFA7EAB0))
-            .systemBarsPadding(), // Isso evita que o nome "Zelus" fique escondido atrás do relógio do celular
+            .systemBarsPadding(),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.SpaceEvenly
     ) {
-
-        // Título
+        // Titulo do app com sombra
         Text(
             text = "Zelus",
-            fontSize = 72.sp, // Aumentei o tamanho
+            fontSize = 72.sp,
             fontWeight = FontWeight.ExtraBold,
-            fontFamily = FontFamily.Serif, // Fonte mais elegante
+            fontFamily = FontFamily.Serif,
             color = Color.White,
             style = TextStyle(
                 shadow = Shadow(
-                    color = Color.Black.copy(alpha = 0.25f), // Sombra levemente transparente
+                    color = Color.Black.copy(alpha = 0.25f),
                     offset = Offset(4f, 8f),
                     blurRadius = 8f
                 )
             )
         )
 
-        // AGRUPAMENTO: Coloco a Imagem e os Textos juntos na mesma coluna
+        // Logo e subtitulo do app
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
             Image(
-                painter = painterResource(id = R.drawable.zelus_app), // Certifique-se de que a imagem continua sendo zelus_app
+                painter = painterResource(id = R.drawable.zelus_app),
                 contentDescription = "Logo Zelus",
-                modifier = Modifier.size(280.dp) // Aumentei um pouquinho a imagem também
+                modifier = Modifier.size(280.dp)
             )
-
-            Spacer(modifier = Modifier.height(16.dp)) // Um pequeno espaço entre a imagem e o texto
-
-            Text(
-                text = "Denúncia",
-                fontSize = 32.sp,
-                fontWeight = FontWeight.Bold,
-                color = Color.White
-            )
-            Text(
-                text = "Ambiente",
-                fontSize = 24.sp,
-                color = Color.White
-            )
+            Spacer(modifier = Modifier.height(16.dp))
+            Text(text = "Denuncia", fontSize = 32.sp, fontWeight = FontWeight.Bold, color = Color.White)
+            Text(text = "Ambiente", fontSize = 24.sp, color = Color.White)
         }
 
-        // Botão "Acessar"
+        // Botao para acessar o app
         Button(
             onClick = { onAcessarClick() },
             colors = ButtonDefaults.buttonColors(containerColor = Color.White),
             shape = RoundedCornerShape(20.dp),
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(horizontal = 48.dp)
-                .height(56.dp)
+            modifier = Modifier.fillMaxWidth().padding(horizontal = 48.dp).height(56.dp)
         ) {
-            Text(
-                text = "Acessar",
-                color = Color(0xFFA7EAB0),
-                fontSize = 18.sp,
-                fontWeight = FontWeight.Bold
-            )
+            Text(text = "Acessar", color = Color(0xFFA7EAB0), fontSize = 18.sp, fontWeight = FontWeight.Bold)
         }
     }
 }

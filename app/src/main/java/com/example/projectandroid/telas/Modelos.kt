@@ -1,3 +1,9 @@
+﻿// ============================================================
+// Modelos.kt - Modelo de dados do app Zelus
+// Define a estrutura da Denuncia com tipo, descricao,
+// endereco (GPS) e imagem (Camera)
+// ============================================================
+
 package com.example.projectandroid.telas
 
 import android.graphics.Bitmap

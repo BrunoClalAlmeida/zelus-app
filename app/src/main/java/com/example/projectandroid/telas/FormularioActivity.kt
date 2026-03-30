@@ -1,3 +1,9 @@
+// ============================================================
+// FormularioActivity.kt - Activity principal do app Zelus
+// Gerencia toda a navegacao entre telas e o fluxo de denuncia
+// Sensores utilizados: CAMERA e GPS (FusedLocationProvider)
+// Tecnologias: Jetpack Compose, Material Design 3
+// ============================================================
 package com.example.projectandroid.telas
 
 import android.Manifest
@@ -31,6 +37,7 @@ import androidx.compose.ui.unit.dp
 import com.google.android.gms.location.LocationServices
 import java.util.Locale
 
+// Activity que inicializa o app com Jetpack Compose e Material Design 3
 class FormularioActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,6 +62,7 @@ fun AplicativoZelus() {
     var enderecoDetectado by remember { mutableStateOf("Buscando sua rua...") }
     var tituloRua by remember { mutableStateOf("Buscando...") }
 
+    // Lista em memoria que armazena as denuncias (banco de dados local)
     var bancoDeDados by remember { mutableStateOf(listOf<Denuncia>()) }
 
     val abaAtiva = when (telaAtual) {
@@ -65,6 +73,8 @@ fun AplicativoZelus() {
         else -> telaAtual
     }
 
+    // Funcao que usa o SENSOR GPS para obter localizacao do usuario
+    // Converte coordenadas (lat/lng) em endereco usando Geocoder
     fun buscarLocalizacao() {
         try {
             val cts = com.google.android.gms.tasks.CancellationTokenSource()

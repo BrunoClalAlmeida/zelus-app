@@ -1,3 +1,9 @@
+﻿// ============================================================
+// TelaDenuncia.kt - Telas do fluxo de denuncia
+// Inclui: captura de foto (Camera), localizacao (GPS)
+// e formulario de descricao com dropdown de tipo de problema
+// ============================================================
+
 package com.example.projectandroid.telas
 
 import android.graphics.Bitmap
@@ -44,7 +50,7 @@ fun TelaNovaDenuncia(imagem: Bitmap?, onConfirmarClick: () -> Unit, onRefazerFot
                 .padding(top = 48.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Text("Nova Denúncia", fontSize = 22.sp, fontWeight = FontWeight.Bold)
+            Text("Nova DenÃºncia", fontSize = 22.sp, fontWeight = FontWeight.Bold)
             Spacer(modifier = Modifier.height(30.dp))
             Box(
                 modifier = Modifier
@@ -55,11 +61,11 @@ fun TelaNovaDenuncia(imagem: Bitmap?, onConfirmarClick: () -> Unit, onRefazerFot
                 contentAlignment = Alignment.Center
             ) {
                 if (imagem != null) Image(bitmap = imagem.asImageBitmap(), contentDescription = null, contentScale = ContentScale.Crop, modifier = Modifier.fillMaxSize())
-                else Text("Câmera Pronta", color = Color.White)
+                else Text("CÃ¢mera Pronta", color = Color.White)
             }
             Spacer(modifier = Modifier.height(24.dp))
             Button(onClick = onConfirmarClick, colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFA7EAB0)), shape = RoundedCornerShape(20.dp), modifier = Modifier.fillMaxWidth(0.6f).height(50.dp)) {
-                Text("Confirmar Localização", color = Color.Black, fontWeight = FontWeight.Bold)
+                Text("Confirmar LocalizaÃ§Ã£o", color = Color.Black, fontWeight = FontWeight.Bold)
             }
             Spacer(modifier = Modifier.height(16.dp))
             OutlinedButton(onClick = onRefazerFotoClick, shape = RoundedCornerShape(20.dp), modifier = Modifier.fillMaxWidth(0.6f).height(50.dp), border = BorderStroke(2.dp, Color(0xFF13C69D))) {
@@ -108,7 +114,7 @@ fun TelaLocalizacao(endereco: String, ruaTitle: String, onProsseguirClick: () ->
                 Spacer(modifier = Modifier.height(20.dp))
 
                 Button(onClick = onProsseguirClick, colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF13C69D)), modifier = Modifier.fillMaxWidth().height(56.dp), shape = RoundedCornerShape(20.dp)) {
-                    Text("Prosseguir para Denúncia", color = Color.White, fontWeight = FontWeight.Bold, fontSize = 16.sp)
+                    Text("Prosseguir para DenÃºncia", color = Color.White, fontWeight = FontWeight.Bold, fontSize = 16.sp)
                 }
             }
         }
@@ -124,7 +130,7 @@ fun TelaDescricaoDenuncia(onEnviarClick: (String, String) -> Unit, paddingBarra:
 
     var tipoProblemaSelecionado by remember { mutableStateOf("SELECIONE O TIPO...") }
     var menuExpandido by remember { mutableStateOf(false) }
-    val opcoesDeProblema = listOf("BURACO NA RUA", "POSTE QUEBRADO", "LIXO NA RUA", "VAZAMENTO DE ÁGUA", "OUTROS")
+    val opcoesDeProblema = listOf("BURACO NA RUA", "POSTE QUEBRADO", "LIXO NA RUA", "VAZAMENTO DE ÃGUA", "OUTROS")
 
     Column(
         modifier = Modifier
@@ -138,7 +144,7 @@ fun TelaDescricaoDenuncia(onEnviarClick: (String, String) -> Unit, paddingBarra:
         Row(verticalAlignment = Alignment.CenterVertically) {
             Icon(Icons.AutoMirrored.Filled.List, contentDescription = null, tint = Color.Black)
             Spacer(modifier = Modifier.width(10.dp))
-            Text("Descrição Da Denúncia", fontSize = 22.sp, fontWeight = FontWeight.Bold, color = Color.Black)
+            Text("DescriÃ§Ã£o Da DenÃºncia", fontSize = 22.sp, fontWeight = FontWeight.Bold, color = Color.Black)
         }
         Spacer(modifier = Modifier.height(30.dp))
 
@@ -202,7 +208,7 @@ fun TelaDescricaoDenuncia(onEnviarClick: (String, String) -> Unit, paddingBarra:
             modifier = Modifier.fillMaxWidth().height(56.dp),
             shape = RoundedCornerShape(20.dp)
         ) {
-            Text("Enviar Denúncia", color = Color.White, fontWeight = FontWeight.Bold, fontSize = 16.sp)
+            Text("Enviar DenÃºncia", color = Color.White, fontWeight = FontWeight.Bold, fontSize = 16.sp)
         }
         Spacer(modifier = Modifier.height(20.dp))
     }

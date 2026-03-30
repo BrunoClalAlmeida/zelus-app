@@ -1,3 +1,9 @@
+﻿// ============================================================
+// TelaHistorico.kt - Tela de listagem de denuncias
+// Exibe todas as denuncias salvas com foto, tipo e endereco
+// Usa LazyColumn para lista eficiente (Material Design 3)
+// ============================================================
+
 package com.example.projectandroid.telas
 
 import androidx.compose.foundation.BorderStroke
@@ -31,7 +37,7 @@ fun TelaVerDenuncias(listaDeDenuncias: List<Denuncia>, paddingBarra: PaddingValu
         Row(modifier = Modifier.padding(horizontal = 24.dp), verticalAlignment = Alignment.CenterVertically) {
             Icon(Icons.AutoMirrored.Filled.List, contentDescription = null, tint = Color.Black)
             Spacer(modifier = Modifier.width(10.dp))
-            Text("Minhas Denúncias", fontSize = 22.sp, fontWeight = FontWeight.Bold, fontFamily = FontFamily.Monospace, color = Color.Black)
+            Text("Minhas DenÃºncias", fontSize = 22.sp, fontWeight = FontWeight.Bold, fontFamily = FontFamily.Monospace, color = Color.Black)
         }
         Spacer(modifier = Modifier.height(30.dp))
 
@@ -41,7 +47,7 @@ fun TelaVerDenuncias(listaDeDenuncias: List<Denuncia>, paddingBarra: PaddingValu
                     Column(horizontalAlignment = Alignment.CenterHorizontally) {
                         Icon(Icons.Default.Info, contentDescription = null, tint = Color.LightGray, modifier = Modifier.size(64.dp))
                         Spacer(modifier = Modifier.height(16.dp))
-                        Text("Nenhuma denúncia registrada ainda.", color = Color.Gray, fontWeight = FontWeight.Bold)
+                        Text("Nenhuma denÃºncia registrada ainda.", color = Color.Gray, fontWeight = FontWeight.Bold)
                         Text("Seja o primeiro a ajudar o bairro!", color = Color.Gray)
                     }
                 }
