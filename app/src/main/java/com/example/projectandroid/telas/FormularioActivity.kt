@@ -1,4 +1,4 @@
-// ============================================================
+﻿// ============================================================
 // FormularioActivity.kt - Activity principal do app Zelus
 // Gerencia toda a navegacao entre telas e o fluxo de denuncia
 // Sensores utilizados: CAMERA e GPS (FusedLocationProvider)
